@@ -1,0 +1,7 @@
+<h2>StackOverflow Question 53938018</h2>
+
+<p *ngIf="companyName">Company Name selected is: {{companyName}}</p>
+
+<h3>Company Form as a child component:</h3>
+
+<hello [companyForm]="companyForm" (optionSelected)="onSelected($event)"></hello>

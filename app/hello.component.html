@@ -1,0 +1,23 @@
+<form [formGroup]="companyForm">
+  <mat-form-field>
+    <input
+      style="border:solid 1px;"
+      type="text"
+      (click)="click()"
+      (focusout)="focusout()"
+      matInput
+      placeholder="{{ placeholder }}"
+      formControlName="company"
+      [matAutocomplete]="autoCo"
+      (ngModelChange)="onSelectionChanged($event)"
+    />
+    <mat-autocomplete #autoCo="matAutocomplete" [displayWith]="displayCo">
+      <mat-option
+        *ngFor="let company of filteredCompanies | async"
+        [value]="company.companyName"
+      >
+        {{ company.companyName }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
